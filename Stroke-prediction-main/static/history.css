@@ -1,0 +1,111 @@
+/* General styles */
+body {
+    font-family: 'Merriweather', serif;
+    background: #5EE6EB;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color : black;
+
+}
+
+/* Container styling */
+h1 {
+    font-family: 'Merriweather', serif;
+    text-align: center;
+    font-size: 2.5rem;
+    color: black;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 1.5px;
+
+}
+
+/* Table styling */
+table {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+thead {
+    background: #4caf50;
+    color: #fff;
+}
+
+thead th {
+    padding: 15px;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
+tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+tbody tr:nth-child(even) {
+    background: #f2f2f2;
+}
+
+tbody tr:nth-child(odd) {
+    background: #e9f7ef;
+}
+
+tbody tr:hover {
+    background-color: #d4efdf;
+}
+
+td, th {
+    text-align: center;
+    padding: 15px;
+    font-size: 0.95rem;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Button styling */
+button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+
+    td, th {
+        padding: 10px;
+    }
+
+    button {
+        padding: 8px 10px;
+        font-size: 0.85rem;
+    }
+}

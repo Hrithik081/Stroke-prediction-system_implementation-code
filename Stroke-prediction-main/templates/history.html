@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="{{ url_for('static', filename='history.css') }}">
+    <title>History</title>
+    <script>
+        function deleteRecord(id) {
+            if (confirm("Are you sure you want to delete this record?")) {
+                fetch(`/delete/${id}`, { method: 'POST' })
+                    .then(response => {
+                        if (response.status === 204) {
+                            document.getElementById(`record-${id}`).remove();
+                        } else {
+                            alert("Failed to delete the record.");
+                        }
+                    });
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Prediction History</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Result</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in records %}
+            <tr id="record-{{ record[0] }}">
+                <td>{{ record[0] }}</td>
+                <td>{{ record[1] }}</td>
+                <td>{{ record[2] }}</td>
+                <td>{{ record[12] }}</td>
+                <td>
+                    <button onclick="deleteRecord({{ record[0] }})">Delete</button>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--&lt;!&ndash;<!DOCTYPE html>&ndash;&gt;-->
+<!--&lt;!&ndash;<html lang="en">&ndash;&gt;-->
+<!--&lt;!&ndash;<head>&ndash;&gt;-->
+<!--&lt;!&ndash;    <meta charset="UTF-8">&ndash;&gt;-->
+<!--&lt;!&ndash;    <meta name="viewport" content="width=device-width, initial-scale=1.0">&ndash;&gt;-->
+<!--&lt;!&ndash;    <title>Prediction History</title>&ndash;&gt;-->
+<!--&lt;!&ndash;    <link rel="stylesheet" href="{{ url_for('static', filename='history.css') }}">&ndash;&gt;-->
+<!--&lt;!&ndash;</head>&ndash;&gt;-->
+<!--&lt;!&ndash;<body>&ndash;&gt;-->
+<!--&lt;!&ndash;    <div class="container">&ndash;&gt;-->
+<!--&lt;!&ndash;        <h1>Prediction History</h1>&ndash;&gt;-->
+<!--&lt;!&ndash;        <table>&ndash;&gt;-->
+<!--&lt;!&ndash;            <tr>&ndash;&gt;-->
+<!--&lt;!&ndash;                <th>Name</th>&ndash;&gt;-->
+<!--&lt;!&ndash;                <th>Age</th>&ndash;&gt;-->
+<!--&lt;!&ndash;                <th>Prediction Result</th>&ndash;&gt;-->
+<!--&lt;!&ndash;                <th>Timestamp</th>&ndash;&gt;-->
+<!--&lt;!&ndash;            </tr>&ndash;&gt;-->
+<!--&lt;!&ndash;            {% for record in records %}&ndash;&gt;-->
+<!--&lt;!&ndash;            <tr>&ndash;&gt;-->
+<!--&lt;!&ndash;                <td>{{ record[1] }}</td>&ndash;&gt;-->
+<!--&lt;!&ndash;                <td>{{ record[2] }}</td>&ndash;&gt;-->
+<!--&lt;!&ndash;                <td>{{ record[12] }}</td>&ndash;&gt;-->
+<!--&lt;!&ndash;                <td>{{ record[13] }}</td>&ndash;&gt;-->
+<!--&lt;!&ndash;            </tr>&ndash;&gt;-->
+<!--&lt;!&ndash;            {% endfor %}&ndash;&gt;-->
+<!--&lt;!&ndash;        </table>&ndash;&gt;-->
+<!--&lt;!&ndash;        <div class="history-link">&ndash;&gt;-->
+<!--&lt;!&ndash;            <a href="{{ url_for('index') }}">Back to Home</a>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;</body>&ndash;&gt;-->
+<!--&lt;!&ndash;</html>&ndash;&gt;-->
