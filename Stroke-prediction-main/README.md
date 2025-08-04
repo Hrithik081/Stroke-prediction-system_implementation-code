@@ -39,3 +39,8 @@ stroke based on health and lifestyle data. The system uses various input paramet
  - Open a web browser and navigate to http://127.0.0.1:5000/index, select predict option.
  - Enter the required health and lifestyle parameters in the input form, and click "Predict" to see the stroke risk assessment.
    
+## 👤 Author
+
+**Hrithik V S**  
+📧 Email: hrithikvs07@gmail.com  
+🔗 GitHub: [@hrithik081](https://github.com/hrithik081)
